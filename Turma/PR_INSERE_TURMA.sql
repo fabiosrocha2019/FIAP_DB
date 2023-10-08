@@ -1,0 +1,23 @@
+use FIAP_DB
+GO 
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE PR_INSERE_TURMA
+
+@turma varchar(45),
+@ano int
+
+AS
+BEGIN
+	
+	SET NOCOUNT ON;
+
+	INSERT INTO turma(turma,ano)
+	values (@turma,@ano)
+END
+GO
+

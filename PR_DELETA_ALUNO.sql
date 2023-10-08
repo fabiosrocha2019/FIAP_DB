@@ -1,0 +1,31 @@
+use FIAP_DB
+GO 
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE PR_DELETA_ALUNO
+
+@id int
+
+AS
+BEGIN
+	
+	SET NOCOUNT ON;
+
+	DELETE FROM aluno_turma
+	WHERE aluno_id = @id
+
+
+	DELETE
+	from
+		aluno
+	where 
+		id = @id
+END
+GO
+
+--EXEC PR_BUSCA_TODOS_ALUNOS
+

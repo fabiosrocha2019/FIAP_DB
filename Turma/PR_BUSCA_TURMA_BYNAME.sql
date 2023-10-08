@@ -1,0 +1,28 @@
+use FIAP_DB
+GO 
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE PR_BUSCA_TURMA_BYNAME
+
+@name varchar(45)
+
+AS
+BEGIN
+	
+	SET NOCOUNT ON;
+
+	select 
+		*
+	from
+		turma
+	where 
+		UPPER(turma) = UPPER(@name)
+END
+GO
+
+--EXEC PR_BUSCA_TODOS_ALUNOS
+
